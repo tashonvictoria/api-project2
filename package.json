@@ -1,0 +1,33 @@
+{
+  "name": "hotels-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "db:seed": "node --experimental-json-modules seed/data.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "logger": "^0.0.1",
+    "morgan": "^1.10.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "node-fetch": "^3.2.10",
+    "nodemon": "^2.0.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tashonvictoria/api-project2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tashonvictoria/api-project2/issues"
+  },
+  "homepage": "https://github.com/tashonvictoria/api-project2#readme"
+}
