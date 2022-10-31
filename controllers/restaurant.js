@@ -1,9 +1,8 @@
-import restaurant from "../Models/restaurant.js";
-
+import Restaurant from "../Models/Restaurant.js";
 
 export const getRestaurant = async (req, res) => {
   try {
-    const restaurant = await restaurant.find();
+    const restaurant = await Restaurant.find();
     res.json(restaurant);
   } catch (error) {
     console.error(error);
@@ -13,7 +12,7 @@ export const getRestaurant = async (req, res) => {
 export const getRestaurants = async (req, res) => {
   try {
     const { id } = req.params;
-    const restaurant = await restaurant.findById(id);
+    const restaurant = await Restaurant.findById(id);
 
     if (restaurant) {
       return res.json(restaurant);
@@ -28,7 +27,7 @@ export const getRestaurants = async (req, res) => {
 
 export const createRestaurant = async (req, res) => {
   try {
-    const restaurant = new restaurant(req.body);
+    const restaurant = new Restaurant(req.body);
     await restaurant.save();
     res.status(201).json(restaurant);
   } catch (error) {
@@ -40,7 +39,7 @@ export const createRestaurant = async (req, res) => {
 export const updateRestaurant = async (req, res) => {
   try {
     const { id } = req.params;
-    const restaurant = await restaurant.findByIdAndUpdate(id, req.body);
+    const restaurant = await Restaurant.findByIdAndUpdate(id, req.body);
     res.status(201).json(restaurant);
   } catch (error) {
     console.error(error);
@@ -51,7 +50,7 @@ export const updateRestaurant = async (req, res) => {
 export const deleteRestaurant = async (req, res) => {
   try {
     const { id } = req.params;
-    const deleted = await restaurant.findByIdAndDelete(id);
+    const deleted = await Restaurant.findByIdAndDelete(id);
 
     if (deleted) {
       return res.status(200).send("Restaurant deleted!");
@@ -63,5 +62,3 @@ export const deleteRestaurant = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-
-export default getRestaurant

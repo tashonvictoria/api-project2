@@ -1,5 +1,5 @@
 import db from "../db/connection.js";
-import restaurant from "../Models/restaurant.js";
+import restaurant from "../Models/Restaurant.js";
 import restaurants from "./restaurants.json" assert { type: "json" };
 
 const insertData = async () => {
