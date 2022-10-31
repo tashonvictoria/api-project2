@@ -3,14 +3,14 @@ import restaurant from "../Models/restaurant.js";
 
 export const getRestaurant = async (req, res) => {
   try {
-    const restaurants = await restaurant.find();
-    res.json(restaurants);
+    const restaurant = await restaurant.find();
+    res.json(restaurant);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
   }
 };
-export const getCharacter = async (req, res) => {
+export const getRestaurants = async (req, res) => {
   try {
     const { id } = req.params;
     const restaurant = await restaurant.findById(id);
