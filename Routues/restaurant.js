@@ -8,4 +8,4 @@ router.post("/", controllers.createRestaurant);
 router.put("/:id", controllers.updateRestaurant);
 router.delete("/:id", controllers.deleteRestaurant);
 
-export default router
+export default router;
