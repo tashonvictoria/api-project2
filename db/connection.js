@@ -1,16 +1,20 @@
 import mongoose from "mongoose";
 import chalk from "chalk";
 
-let mongooseConnectionConfig = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
+
+
+
+
+const url = process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/example'
+
+let mongooseConfig = {useNewUrlParser: true, useUnifiedTopology: true}
+
+mongoose.connect(url, mongooseConfig)
 
 mongoose.set("returnOriginal", false);
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/restaurants",
-    mongooseConnectionConfig)
+  .connect(url, mongooseConfig)
   .catch((err) => {
     console.log(`Error connection go MongoDB: ${err.message}`);
   });
