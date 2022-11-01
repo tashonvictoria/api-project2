@@ -1,6 +1,6 @@
 import Restaurant from "../Models/Restaurant.js";
 
-export const getRestaurant = async (req, res) => {
+export const getRestaurants = async (req, res) => {
   try {
     const restaurant = await Restaurant.find();
     res.json(restaurant);
@@ -9,7 +9,7 @@ export const getRestaurant = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-export const getRestaurants = async (req, res) => {
+export const getRestaurant = async (req, res) => {
   try {
     const { id } = req.params;
     const restaurant = await Restaurant.findById(id);
