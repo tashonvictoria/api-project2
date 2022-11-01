@@ -2,8 +2,8 @@ import Restaurant from "../Models/Restaurant.js";
 
 export const getRestaurants = async (req, res) => {
   try {
-    const restaurant = await Restaurant.find();
-    res.json(restaurant);
+    const restaurants = await Restaurant.find();
+    res.json(restaurants);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
